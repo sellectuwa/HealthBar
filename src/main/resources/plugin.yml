@@ -1,0 +1,8 @@
+name: HealthBar
+version: ${project.version}
+main: me.sellect.healthbar.HealthBar
+api-version: 1.16
+prefix: HealthBar
+authors: [sellect]
+description: Health bar under player's nickname
+website: https://github.com/sellectuwa
