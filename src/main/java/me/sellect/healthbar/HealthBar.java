@@ -12,6 +12,15 @@ public final class HealthBar extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        // UpdateChecker
+        new UpdateChecker(this, 85218).getVersion(version -> {
+            if (this.getDescription().getVersion().equalsIgnoreCase(version)) {
+                getLogger().info("There is not a new update available.");
+            }else{
+                getLogger().info("There is a new update available.");
+            }
+        });
+
         // Metrics
         Metrics metrics = new Metrics(this, 9217);
 
