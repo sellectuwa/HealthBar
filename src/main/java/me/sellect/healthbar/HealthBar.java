@@ -1,5 +1,6 @@
 package me.sellect.healthbar;
 
+import org.bstats.bukkit.Metrics;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scoreboard.DisplaySlot;
@@ -23,8 +24,8 @@ public final class HealthBar extends JavaPlugin {
             }
         });
 
-        // Metrics
-        Metrics metrics = new Metrics(this, 9217);
+        // bStats Metrics
+        new Metrics(this, 9217);
 
         // Config
         new ConfigLoader(this).configSetup();
