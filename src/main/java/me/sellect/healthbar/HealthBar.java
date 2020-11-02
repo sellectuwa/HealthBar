@@ -19,7 +19,7 @@ public final class HealthBar extends JavaPlugin {
         new UpdateChecker(this, 85218).getVersion(version -> {
             if (this.getDescription().getVersion().equalsIgnoreCase(version)) {
                 getLogger().info("There is not a new update available.");
-            }else{
+            } else {
                 getLogger().info("There is a new update available.");
             }
         });
@@ -30,7 +30,7 @@ public final class HealthBar extends JavaPlugin {
         // Config
         new ConfigLoader(this).configSetup();
 
-        scoreboard = getServer().getScoreboardManager().getMainScoreboard();
+        scoreboard = Objects.requireNonNull(getServer().getScoreboardManager()).getMainScoreboard();
         registerHealthBar();
     }
 
